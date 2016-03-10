@@ -10,11 +10,11 @@ che:
     /home/user/che/bin/che.sh run -d
     "
   net: "host"
+  environment:
+    - CHE_DOCKER_MACHINE_HOST=${VM_IP}
   volumes:
     - "/var/run/docker.sock:/var/run/docker.sock"
     - "/Users/BGRANTHAM/docker/che/lib:/home/user/che/lib-copy"
     - "/Users/BGRANTHAM/docker/che/workspaces:/home/user/che/workspaces"
     - "/Users/BGRANTHAM/docker/che/tomcat/temp/local-storage:/home/user/che/tomcat/temp/local-storage"
   container_name: che
-environment:
-    - CHE_DOCKER_MACHINE_HOST=${VM_IP}
